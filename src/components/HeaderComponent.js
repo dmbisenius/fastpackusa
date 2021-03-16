@@ -29,7 +29,7 @@ render() {
 
             <Navbar dark sticky="top" expand="md">
                 <div className="container">
-                <NavbarBrand className="mr-auto" href="/"><img src="/assets/Mountainlogo.png" height="30" width="30" alt="FastPack Logo" /></NavbarBrand>
+                <NavbarBrand className="mr-auto" href="/"><img src="images/Mountainlogo.png" height="30" width="30" alt="FastPack Logo" /></NavbarBrand>
             <NavbarToggler onclick ={this.toggleNav} />
                 <Collapse isNavOpen={this.state.isNavOpen} navbar>
                     <Nav navbar>
@@ -40,27 +40,27 @@ render() {
                         </NavItem>
                         <NavItem>
                             <NavLink className="nav-link" to="/routes">
-                                <i className="fa fa-home fa-lg" />Routes
+                                <i className="fa fa-tree fa-lg" />Routes
                             </NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink className="nav-link" to="/pricing">
-                                <i className="fa fa-home fa-lg" />Prices
+                                <i className="fa fa-money fa-lg" />Prices
                             </NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink className="nav-link" to="/guides">
-                                <i className="fa fa-user-friends" />Guides
+                                <i className="fa fa-users" />Guides
                             </NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink className="nav-link" to="/equipment">
-                                <i className="fa fa-home fa-lg" />Equipment
+                                <i className="fas fa-campground fa-lg" />Equipment
                             </NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink className="nav-link" to="/contact">
-                                <i className="fa fa-home fa-lg" />Contact
+                                <i className="fas fa-phone-square fa-lg" />Contact
                             </NavLink>
                         </NavItem>
                     </Nav>

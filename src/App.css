@@ -3,17 +3,17 @@ body {
   background-color: cadetblue;
 }
 
-h1, h2, h3, .card-body>.card-title {
-  font-family: "Lobster", cursive;
+h1 {
+  font-family: "Lobster";
 }
 .navbar-dark {
   margin: 0;
   padding: 0;
   background-image: linear-gradient(to right, #649173, #dbd5a4);
 }
-.row-content {
+#oldrow {
   padding: 50px 0;
-  border-bottom: 1px ridge;
+  border-bottom: 1px ridge black;
   min-height: 200px;
 }
 #landingPage {
@@ -38,6 +38,21 @@ h1, h2, h3, .card-body>.card-title {
   padding: 50px;
 }
 
+#whyfastpack {
+  border-bottom: none;
+  padding-top: 0px;
+  min-height: none;
+  padding-bottom: 0px;
+}
+
+#whyfastpackinfo {
+  border-bottom: none;
+  padding-top: 50px;
+  min-height: none;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
 #homePage {
   height: 200px;
   width: auto;
@@ -47,11 +62,19 @@ h1, h2, h3, .card-body>.card-title {
   background-size: cover;
   margin-bottom: 50px;
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  padding: 50px;
+}
+#howtofastpack{
+  border-top: 1px ridge black;
+  padding: 50px;
+  margin-top: 50px;
+  border-bottom: none;
 }
 
 .site-footer {
+  margin-top: 50px;
   background-color: blanchedalmond;
-  padding: 20px 0;
+  padding: 20px;
 }
 
 .modal-content {
@@ -62,5 +85,36 @@ h1, h2, h3, .card-body>.card-title {
   transform: translate(-50%, -50%);
   width: 750px;
   border: 1px solid;
+}
+
+.card-title {
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.card-body{
+  text-align: center;
+}
+
+.carousel{
+  height:auto;
+  width: 750px;
+  overflow: hidden;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border-radius: 2%;
+  border: 3px ridge black;
+}
+.carousel img {
+  max-height: 650px;
+  max-width: none;
+  min-width: 100%;
+  min-height: 50px;
+}
+.carousel-caption{
+  background-color: rgba(0, 0, 0, 0.5);
 }
 

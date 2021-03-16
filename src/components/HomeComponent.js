@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { CardTitle, Jumbotron, Card, CardBody, CardHeader, CardImg, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Input, Label, Col, Row, InputGroup, CardSubtitle, CardImgOverlay } from 'reactstrap';
+import { CardTitle, Jumbotron, Card, CardBody, CardImg, CardText, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Input, Label, Col, Row} from 'reactstrap';
 import DatePicker from "react-datepicker";
 import { PHOTOS } from '../shared/photos';
 import "react-datepicker/dist/react-datepicker.css";
@@ -14,6 +14,7 @@ class Home extends Component {
         };
         this.toggleModal = this.toggleModal.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this);
+
     }
 
     handleSubmit(values) {
@@ -30,21 +31,49 @@ class Home extends Component {
             <React.Fragment>
                 <Jumbotron id="homePage"></Jumbotron>
                 <div className="container">
-                    <div className="row">
-                        <div className="col-sm-6">
+                    <div className="row" id="oldrow">
+                        <div className="col-sm-6 mt-5">
                             <h1>Maximum Experience</h1>
-                            <h2>Minimum Weight</h2>
+                            <h1>Minimum Weight</h1>
+                            <Button type="button" color="secondary" onClick={this.toggleModal}>Reserve Now</Button>
                         </div>
                         <div className="col-sm-6">
                             <Card>
-                                <CardImg src={this.state.photos.image} width='100%' alt="Hiking" />
+                                <CardImg src={this.state.photos[0].image} width='100%' alt="Hiking" />
                             </Card>
                         </div>
                     </div>
-                    <span className="navbar-text ml-auto">
-                        <Button type="button" color="secondary" onClick={this.toggleModal}>Reserve Now</Button>
-                    </span>
+                    <div className="row"  id="oldrow" >
+                        <div className="col mt-5 text-center">
+                            <h2><strong>Whether your shooting for a new FKT, or just want to enjoy the beauty of nature without the burden of a heavy pack, FastPacking USA can help you accomplish your goals!</strong></h2>
+                        </div>
+                    </div>
+                    <div className="row" id="whyfastpackinfo">
+                        <div className="col-12 text-center">
+                            <h3><strong>Why FastPack?</strong></h3>
+                            <strong>We follow along and do all the hard work. All you need to do is walk!</strong>
+                        </div>
+                    </div>
+                    <div className='col'>
+                        <AddCard lightweight={this.props.lightweight} nostress={this.props.nostress} enjoythetrip={this.props.enjoythetrip} />
+                    </div>
+                    <div className='row' id='howtofastpack'>
+                        <div className="col-12 mt-5 text-center">
+                            <h3><strong>How to Fast Pack?</strong></h3>
+                            <strong>We follow along and do all the hard work. All you need to do is walk!</strong>
+                        </div>
+                    </div>
+                    <div>
+                        <div className="row" id="whyfastpack" >
+                            <div className='col'>
+                                <AddAnotherCard wesetupcamp={this.props.wesetupcamp} weprovidethemeals={this.props.weprovidethemeals} monitoring={this.props.monitoring} prepared={this.props.prepared} />
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+
+
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal} contentClassName="custom-modal-style">
                     <ModalHeader toggle={this.toggleModal}>Reservation Form</ModalHeader>
                     <ModalBody>
@@ -121,8 +150,60 @@ class Home extends Component {
     }
 }
 
+function RenderCard({ item }) {
+    return (
+        <Card>
+            <CardImg src={item.image} alt={item.name} class="rounded mx-auto d-block" />
+            <CardBody>
+                <CardTitle>{item.name}</CardTitle>
+                <CardText>{item.comment}</CardText>
+            </CardBody>
+        </Card>
+    );
+}
+
+function AddCard(props) {
 
 
+    return (
+        <div className="container">
+            <div className="row" id="whyfastpack">
+                <div className="col-md">
+                    <RenderCard item={props.lightweight} />
+                </div>
+                <div className="col-md">
+                    <RenderCard item={props.nostress} />
+                </div>
+                <div className="col-md">
+                    <RenderCard item={props.enjoythetrip} />
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function AddAnotherCard(props) {
+
+
+    return (
+        <div className="container">
+            <div className="row" id="whyfastpack">
+                <div className="col-md">
+                    <RenderCard item={props.wesetupcamp} />
+                </div>
+                <div className="col-md">
+                    <RenderCard item={props.weprovidethemeals} />
+                </div>
+                <div className="col-md">
+                    <RenderCard item={props.monitoring} />
+                </div>
+                <div className="col-md">
+                    <RenderCard item={props.prepared} />
+                </div>
+            </div>
+        </div>
+    );
+}
 
 
 class MyDatepickerComponent extends Component {
@@ -188,6 +269,8 @@ class MyDatepickerComponent extends Component {
         )
     };
 }
+
+
 
 
 export default Home;
