@@ -6,6 +6,10 @@ body {
 h1 {
   font-family: "Lobster";
 }
+
+#guides{
+  text-align: center;
+}
 .navbar-dark {
   margin: 0;
   padding: 0;
@@ -45,6 +49,13 @@ h1 {
   padding-bottom: 0px;
 }
 
+#equipmentplan {
+  border-bottom: none;
+  padding-top: 0px;
+  min-height: none;
+  padding-bottom: 0px;
+}
+
 #whyfastpackinfo {
   border-bottom: none;
   padding-top: 50px;
@@ -54,7 +65,7 @@ h1 {
 }
 
 #homePage {
-  height: 200px;
+  height: 400px;
   width: auto;
   background-image: url(/src/assets/homePage.jpg);
   background-position: center;
@@ -64,6 +75,55 @@ h1 {
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   padding: 50px;
 }
+
+#priceJumbotron{
+  height: 400px;
+  width: auto;
+  background-image: url(/src/assets/pricing.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat repeat;
+  background-size: cover;
+  margin-bottom: 50px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  padding: 50px;
+}
+
+#guidePage{
+  height: 400px;
+  width: auto;
+  background-image: url(/src/assets/grandtetons.jpg);
+  background-position:top;
+  background-repeat: no-repeat repeat;
+  background-size: cover;
+  margin-bottom: 50px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  padding: 50px;
+}
+
+#equipmentPage{
+  height: 400px;
+  width: auto;
+  background-image: url(/src/assets/equipmentPage.jpg);
+  background-position:top;
+  background-repeat: no-repeat repeat;
+  background-size: cover;
+  margin-bottom: 50px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  padding: 50px;
+}
+
+#contactPage{
+  height: 400px;
+  width: auto;
+  background-image: url(/src/assets/coloradofall.jpg);
+  background-position:top;
+  background-repeat: no-repeat repeat;
+  background-size: cover;
+  margin-bottom: 50px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  padding: 50px;
+}
+
 #howtofastpack{
   border-top: 1px ridge black;
   padding: 50px;
@@ -93,7 +153,19 @@ h1 {
   text-align: center;
 }
 
+.card-header {
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
 .card-body{
+  text-align: center;
+}
+
+.card-footer{
+  font-weight: 500;
+  font-size: 1.25rem;
   text-align: center;
 }
 
@@ -118,3 +190,11 @@ h1 {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+#guideImg{
+  max-width: 350px;
+  height: 300px;
+}
+
+.card-subtitle{
+  text-align: center;
+}

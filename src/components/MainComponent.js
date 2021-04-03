@@ -4,8 +4,14 @@ import Landing from './LandingComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
 import Routes from './RouteComponent';
+import Pricing from './PriceComponent';
+import Guides from './GuideComponent';
+import Equipment from './EquipmentComponent';
+import Contact from './ContactComponent';
 import {Switch, Route, Redirect, withRouter, } from 'react-router-dom';
 import { WHYFASTPACK } from '../shared/whyfastpack';
+import { EQUIPMENT } from '../shared/equipment';
+
 
 
 
@@ -16,7 +22,7 @@ class Main extends Component{
         super(props);
         this.state={
             whyfastpack: WHYFASTPACK,
-            
+            equipment: EQUIPMENT,
         };
     }
 
@@ -42,6 +48,15 @@ class Main extends Component{
             );
         };
 
+        const EquipmentPage=()=>{
+            return(
+                <Equipment
+                    basicequipmentplan={this.state.equipment.filter(basicequipmentplan => basicequipmentplan.basicequipmentplan)[0]}
+                    premiumequipmentplan={this.state.equipment.filter(premiumequipmentplan => premiumequipmentplan.premiumequipmentplan)[0]}
+                    />
+            )
+        }
+
         return(
             <div>
                 <Header />
@@ -49,10 +64,10 @@ class Main extends Component{
                     <Route exact path='/' component={LandingPage} />
                     <Route path ='/home' component={HomePage} />
                     <Route path= '/routes' component={Routes}/>  
-                    <Route path='/pricing' />
-                    <Route path='/guides' />
-                    <Route path='/equipment' />
-                    <Route path='/contact' />
+                    <Route path='/pricing' component={Pricing} />
+                    <Route path='/guides'  component={Guides} />
+                    <Route path='/equipment' component={EquipmentPage} />
+                    <Route path='/contact' component={Contact} />
                     <Redirect to ='/home' />
                 </Switch>
                 <Footer />
